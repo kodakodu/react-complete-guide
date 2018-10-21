@@ -22,9 +22,9 @@ deletePersonHandler = (personIndex) => {
   nameChangedHandler = (event) => {
     this.setState({
       persons: [
-        { name: 'Max', age: 29 },
-        { name: event.target.value, age: 28 },
-        {name : 'Stephanie', age: 27}
+        { id: '1', name: 'Max', age: 29 },
+        { id: '2', name: event.target.value, age: 28 },
+        { id: '3', name: 'Stephanie', age: 27}
       ]
     })
   }
@@ -52,7 +52,8 @@ deletePersonHandler = (personIndex) => {
             return <Person
                       click={() => this.deletePersonHandler(index)} 
                       name={person.name} 
-                      age={person.age} />
+                      age={person.age}
+                      key={person.id} />
           })}
         
       </div>
